@@ -1,23 +1,24 @@
 import React from "react";
 
-const CountryCard = () => {
+const CountryCard = (props) => (
   <section className="country-container">
     <div className="country-flag">
       <img src="" alt="" />
     </div>
     <article className="country-info">
-      <h2 className="country-name">Germany</h2>
+      <h2 className="country-name">{props.name}</h2>
       <p>
-        Population: <span className="population">81,13903</span>
+        Population: <span className="population">{props.population}</span>
       </p>
       <p>
-        Region: <span className="region">Europe</span>
+        Region: <span className="region">{props.region}</span>
       </p>
       <p>
-        Capital: <span className="capital">Berlin</span>
+        Capital: <span className="capital">{props.capital}</span>
       </p>
     </article>
-  </section>;
-};
+  </section>
+
+);
 
 export default CountryCard;
