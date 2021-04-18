@@ -42,10 +42,7 @@
   }
   .select {
     width: fit-content;
-    border-radius: 5px;
     margin-top: 40px;
-    cursor: pointer;
-    background-color: var(--white);
     position: relative;
     font-size: 1em;
     min-width: 200px;
@@ -54,6 +51,8 @@
       margin-top: 0;
     }
     .Continent-select {
+      width: 100%;
+      background-color: var(--white);
       color: var(--dark-gray);
       font-weight: 600;
       list-style: none;
@@ -62,7 +61,7 @@
       border-radius: 8px;
       cursor: pointer;
       display: flex;
-      position: relative;
+      position: absolute;
       flex-direction: column;
       svg {
         position: absolute;
@@ -89,8 +88,7 @@
             display: block;
           }
           &:hover {
-            color: forestgreen;
-            font-weight: 800;
+            color: var(--very-dark-blue-Light-mode);
           }
         }
       }

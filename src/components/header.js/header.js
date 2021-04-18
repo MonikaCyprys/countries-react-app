@@ -8,19 +8,17 @@ const arrowIcon = <FontAwesomeIcon icon={faChevronDown} />;
 const searchIcon = <FontAwesomeIcon icon={faSearch} />;
 
 const Header = () => (
-  <header>
-    <form className="Custom-searching">
-      <div className="Country-choice">
-        {searchIcon}
-        <input
-          type="search"
-          placeholder="Search for a country..."
-          name="Country"
-          id="Country"
-        />
-      </div>
-      <SelectRegion arrow={arrowIcon} />
-    </form>
+  <header className="Custom-searching">
+    <div className="Country-choice">
+      {searchIcon}
+      <input
+        type="search"
+        placeholder="Search for a country..."
+        name="Country"
+        id="Country"
+      />
+    </div>
+    <SelectRegion arrow={arrowIcon} />
   </header>
 );
 

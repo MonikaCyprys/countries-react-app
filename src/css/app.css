@@ -136,10 +136,7 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  border-radius: 5px;
   margin-top: 40px;
-  cursor: pointer;
-  background-color: var(--white);
   position: relative;
   font-size: 1em;
   min-width: 200px;
@@ -154,6 +151,8 @@ body {
 }
 
 .Custom-searching .select .Continent-select {
+  width: 100%;
+  background-color: var(--white);
   color: var(--dark-gray);
   font-weight: 600;
   list-style: none;
@@ -164,7 +163,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
+  position: absolute;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -207,8 +206,7 @@ body {
 }
 
 .Custom-searching .select .Continent-select li.region:hover {
-  color: forestgreen;
-  font-weight: 800;
+  color: var(--very-dark-blue-Light-mode);
 }
 
 main {
