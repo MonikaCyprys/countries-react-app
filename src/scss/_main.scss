@@ -5,34 +5,90 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
+  &.showDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  .goBackIcon {
+    width: 100px;
+    padding: 5px 10px;
+    margin: 25px auto 0 0;
+    background-color: var(--white);
+    border: none;
+    color: var(--very-dark-blue-Light-mode);
+    transition: 0.8s ease all;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
   .country-container {
     border-radius: 8px;
     flex-basis: 283px;
     margin: 30px auto;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     background-color: var(--white);
+    @include tablet-view {
+      flex-direction: row;
+      align-items: center;
+    }
+    @include desktop-view {
+      align-items: stretch;
+    }
+    &.showDetails {
+      margin: 30px auto;
+      min-width: fit-content;
+      background-color: transparent;
+    }
     .country-flag {
       background-color: rgb(173, 57, 250);
       border-radius: 8px 8px 0 0;
-      min-height: 200px;
+      flex-grow: 1;
+
+      &.showDetails {
+        border-radius: 0 0 0 0;
+        min-height: 260px;
+        min-width: 290px;
+        @include tablet-view {
+          min-height: 300px;
+          min-width: 360px;
+        }
+      }
     }
     .country-info {
       padding: 10px 25px 35px 25px;
+      @include desktop-view {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
       .country-name {
         padding: 15px 0;
+        flex-basis: 100%;
       }
       p {
         font-weight: 600;
         padding: 3px 0;
+        flex-basis: 100%;
+        @include desktop-view {
+          flex-basis: 50%;
+        }
         span {
           font-weight: 300;
         }
-        &.separate-line {
-          margin-top: 30px;
-        }
         &.hidden {
           display: none;
+        }
+      }
+      .borders {
+        margin-top: 40px;
+        .border {
+          border: 1px solid black;
+          padding: 5px 10px;
+          margin-right: 15px;
+          cursor: pointer;
         }
       }
     }
