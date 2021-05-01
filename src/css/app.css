@@ -252,11 +252,17 @@ main .goBackIcon:hover {
           box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
 }
 
-main .country-container {
+main .country-link {
   border-radius: 8px;
   -ms-flex-preferred-size: 280px;
       flex-basis: 280px;
   margin: 30px auto;
+  background-color: var(--white);
+}
+
+main .country-container, main .country-link {
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -264,11 +270,9 @@ main .country-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: var(--white);
 }
 
-main .country-container.showDetails {
-  margin: 30px auto;
+main .country-container.showDetails, main .showDetails.country-link {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
@@ -276,7 +280,7 @@ main .country-container.showDetails {
 }
 
 @media (min-width: 630px) {
-  main .country-container.showDetails {
+  main .country-container.showDetails, main .showDetails.country-link {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -288,25 +292,25 @@ main .country-container.showDetails {
   }
 }
 
-main .country-container .country-flag {
+main .country-container .country-flag, main .country-link .country-flag {
   background-color: #ad39fa;
   border-radius: 8px 8px 0 0;
   height: 200px;
   width: 100%;
 }
 
-main .country-container .country-flag.showDetails {
+main .country-container .country-flag.showDetails, main .country-link .country-flag.showDetails {
   border-radius: 0 0 0 0;
 }
 
 @media (min-width: 630px) {
-  main .country-container .country-flag.showDetails {
+  main .country-container .country-flag.showDetails, main .country-link .country-flag.showDetails {
     min-height: 300px;
     width: 390px;
   }
 }
 
-main .country-container .country-info {
+main .country-container .country-info, main .country-link .country-info {
   padding: 10px 25px 35px 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -318,7 +322,7 @@ main .country-container .country-info {
 }
 
 @media (min-width: 1024px) {
-  main .country-container .country-info.showDetails {
+  main .country-container .country-info.showDetails, main .country-link .country-info.showDetails {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -327,7 +331,7 @@ main .country-container .country-info {
 }
 
 @media (min-width: 1024px) {
-  main .country-container .country-info {
+  main .country-container .country-info, main .country-link .country-info {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-pack: justify;
@@ -336,13 +340,13 @@ main .country-container .country-info {
   }
 }
 
-main .country-container .country-info .country-name {
+main .country-container .country-info .country-name, main .country-link .country-info .country-name {
   padding: 15px 0;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-main .country-container .country-info p {
+main .country-container .country-info p, main .country-link .country-info p {
   font-weight: 600;
   padding: 3px 0;
   -ms-flex-preferred-size: 100%;
@@ -350,27 +354,27 @@ main .country-container .country-info p {
 }
 
 @media (min-width: 1024px) {
-  main .country-container .country-info p {
+  main .country-container .country-info p, main .country-link .country-info p {
     -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
   }
 }
 
-main .country-container .country-info p span {
+main .country-container .country-info p span, main .country-link .country-info p span {
   font-weight: 300;
 }
 
-main .country-container .country-info p.hidden {
+main .country-container .country-info p.hidden, main .country-link .country-info p.hidden {
   display: none;
 }
 
-main .country-container .country-info .borders {
+main .country-container .country-info .borders, main .country-link .country-info .borders {
   margin-top: 40px;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
 
-main .country-container .country-info .borders .border {
+main .country-container .country-info .borders .border, main .country-link .country-info .borders .border {
   border: 1px solid black;
   padding: 5px 10px;
   margin-right: 15px;
