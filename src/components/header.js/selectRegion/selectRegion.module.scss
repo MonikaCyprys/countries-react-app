@@ -1,0 +1,43 @@
+@import "../../../scss/media";
+
+.select {
+  width: fit-content;
+  margin-top: 40px;
+  position: relative;
+  font-size: 1em;
+  min-width: 200px;
+  @include tablet-view {
+    flex-basis: 30%;
+    margin-top: 0;
+  }
+  .ContinentSelect {
+    width: 100%;
+    background-color: var(--white);
+    color: var(--dark-gray);
+    font-weight: 600;
+    list-style: none;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    svg {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      transform: translateY(-50%);
+      font-size: 0.8em;
+      color: var(--dark-gray);
+      pointer-events: none;
+      transition: 0.8s ease all;
+      transform-origin: 50% 25%;
+
+      &.isActive {
+        transform-origin: 50% 50%;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
