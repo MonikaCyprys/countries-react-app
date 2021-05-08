@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+}
+body[data-theme="dark"] {
+  --elementsColor: hsl(209, 23%, 22%); //(Dark Mode Elements)
+  --bgColor: hsl(207, 26%, 17%); //(Dark Mode Background)
+  --textColor: hsl(0, 0%, 100%); //(Dark Mode Text)
+  --bgImage: rgb(82, 54, 100);
+}
+
+body[data-theme="light"] {
+  --elementsColor: hsl(0, 0%, 100%); //(Light Mode Elements)
+  --bgColor: hsl(0, 5%, 96%); //(Light Mode Background)
+  --textColor: hsl(200, 15%, 8%); //(Light Mode Text)
+  --inputsColor: hsl(0, 0%, 52%); //(Light Mode Input)
+  --bgImage: rgb(173, 57, 250);
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bgColor);
+}
+.App {
+  max-width: 1550px;
+  margin: 0 auto;
+}
