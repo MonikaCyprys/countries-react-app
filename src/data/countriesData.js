@@ -6,15 +6,15 @@ export const countriesData = [
     capital: "Gerlin",
   },
   {
-    name: "Borno",
+    name: "Borneo",
     population: "31331",
-    region: "Europe",
+    region: "dsd",
     capital: "hsyagsyu",
   },
   {
     name: "Bahamy",
     population: "3121",
-    region: "Asia",
+    region: "sdsa",
     capital: "bahamamama",
   },
 ];

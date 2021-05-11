@@ -12,8 +12,8 @@
   }
   .ContinentSelect {
     width: 100%;
-    background-color: var(--white);
-    color: var(--dark-gray);
+    background-color: var(--elementsColor);
+    color: var(--textColor);
     font-weight: 600;
     list-style: none;
     padding: 15px;
@@ -29,7 +29,7 @@
       right: 20px;
       transform: translateY(-50%);
       font-size: 0.8em;
-      color: var(--dark-gray);
+      color: var(--inputsColor);
       pointer-events: none;
       transition: 0.8s ease all;
       transform-origin: 50% 25%;

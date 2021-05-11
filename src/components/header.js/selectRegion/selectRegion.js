@@ -6,7 +6,7 @@ class SelectRegion extends React.Component {
     super(props);
     this.handleMenuRegion = this.handleMenuRegion.bind(this);
     this.state = {
-      toggle: true,
+      toggle: false,
     };
   }
 

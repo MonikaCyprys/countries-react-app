@@ -1,76 +1,60 @@
-main {
+@import "../../scss/media";
+main.details {
   padding: 20px 5%;
   width: 100%;
   height: fit-content;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
-  &.showDetails {
-    display: flex;
-    flex-direction: column;
-  }
   .goBackIcon {
     width: 100px;
     padding: 5px 10px;
-    margin: 25px auto 0 0;
-    background-color: var(--white);
+    margin: 25px auto 25px 0;
+    background-color: var(--elementsColor);
     border: none;
-    color: var(--very-dark-blue-Light-mode);
+    color: var(--textColor);
     transition: 0.8s ease all;
     cursor: pointer;
     &:hover {
       box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
     }
   }
-  .country-link {
-    border-radius: 8px;
-    flex-basis: 280px;
-    margin: 30px auto;
-    background-color: var(--white);
-    @extend .country-container;
-  }
-  .country-container {
-    width: 100%;
+  .countryContainer {
     height: 100%;
     display: flex;
     flex-direction: column;
-    &.showDetails {
-      min-width: fit-content;
-      background-color: transparent;
-      @include tablet-view {
-        flex-direction: row;
-        align-items: center;
-        gap: 60px;
-      }
+    min-width: fit-content;
+    background-color: transparent;
+    align-items: center;
+    @include tablet-view {
+      flex-direction: row;
     }
-    .country-flag {
+    .countryFlag {
       background-color: rgb(173, 57, 250);
-      border-radius: 8px 8px 0 0;
       height: 200px;
-      width: 100%;
-      &.showDetails {
-        border-radius: 0 0 0 0;
+      width: 300px;
+      border-radius: 0 0 0 0;
 
-        @include tablet-view {
-          min-height: 300px;
-          width: 390px;
-        }
+      @include tablet-view {
+        min-height: 300px;
+        width: 390px;
       }
     }
-    .country-info {
+    .countryInfo {
       padding: 10px 25px 35px 25px;
       display: flex;
       flex-direction: column;
-      &.showDetails {
-        @include desktop-view {
-          flex-direction: row;
-        }
+      color: var(--textColor);
+      @include tablet-view {
+        padding-left: 50px;
       }
       @include desktop-view {
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
       }
-      .country-name {
+      .countryName {
         padding: 15px 0;
         flex-basis: 100%;
       }

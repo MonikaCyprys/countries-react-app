@@ -1,0 +1,10 @@
+@import "../../scss/media";
+
+main {
+  padding: 20px 5%;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
