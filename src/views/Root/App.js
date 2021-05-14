@@ -18,7 +18,7 @@ class App extends React.Component {
           <Navigation />
           <Switch>
             <Route exact path="/" component={CountryWrapper} />
-            <Route path="/country" component={CountryView} />
+            <Route path="/country/:id"  component={CountryView} />
           </Switch>
         </>
       </BrowserRouter>

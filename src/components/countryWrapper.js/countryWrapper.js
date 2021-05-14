@@ -3,7 +3,7 @@ import "../../scss/media.scss";
 import "./countryWrapper.module.scss";
 import CountryCard from "./countryCard/countryCard";
 import Header from "../../components/header.js/header";
-import { countriesData } from "../../data/countriesData";
+// import { countriesData } from "../../data/countriesData";
 
 class CountryWrapper extends Component {
   constructor(props) {

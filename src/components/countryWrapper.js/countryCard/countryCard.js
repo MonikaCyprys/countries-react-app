@@ -10,8 +10,7 @@ const CountryCard = ({ name, population, region, capital, flag }) => (
       <article className={styles.countryInfo}>
         <h2 className={styles.countryName}>{name}</h2>
         <p>
-          Population:
-          <span className={styles.population}>{population}</span>
+          Population: <span className={styles.population}>{population}</span>
         </p>
         <p>
           Region: <span className={styles.region}>{region}</span>
