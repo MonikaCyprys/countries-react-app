@@ -2,53 +2,71 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-
+import styles from "./detailsComponent.module.scss";
 const arrowBack = <FontAwesomeIcon icon={faLongArrowAltLeft} />;
 
-const DetailsComponent = () => (
-  <main className="showDetails">
+const DetailsComponent = ({
+  name,
+  nativeName,
+  flag,
+  population,
+  region,
+  subregion,
+  capital,
+  domain,
+  cur,
+  languages,
+}) => (
+  <main className={styles.details}>
     <Link to="/">
-      <button className="goBackIcon">{arrowBack} Back</button>
+      <button className={styles.goBackIcon}>{arrowBack} Back</button>
     </Link>
-    <section className="country-container showDetails">
-      <div className="country-flag showDetails">
-        <img src="" alt="" />
+    <section className={styles.countryContainer}>
+      <div className={styles.countryFlag}>
+        <img src={flag} alt="" />
       </div>
-      <article className="country-info showDetails">
-        <h2 className="country-name">Germany</h2>
+      <article className={styles.countryInfo}>
+        <h2 className={styles.countryName}>{name}</h2>
         <div>
           <p>
-            Native name: <span className="native-name">Belgie</span>
+            Native name: <span className={styles.nativeName}>{nativeName}</span>
           </p>
           <p>
-            Population: <span className="population">81,13903</span>
+            Population: <span className={styles.population}>{population}</span>
           </p>
           <p>
-            Region: <span className="region">Europe</span>
+            Region: <span className={styles.region}>{region}</span>
           </p>
           <p>
-            Native name: <span className="sub-region">west europe</span>
+            Native name: <span className={styles.subRegion}>{subregion}</span>
           </p>
           <p>
-            Capital: <span className="capital">Berlin</span>
+            Capital: <span className={styles.capital}>{capital}</span>
           </p>
         </div>
-        <div>
-          <p className="separate-line">
-            Top level domain: <span className="domain">.be</span>
+        <div className="secondInfo">
+          <p>
+            Top level domain: <span className={styles.domain}>{domain}</span>
           </p>
           <p>
-            Currencies: <span className="currencies">euro</span>
+            Currencies: <span className={styles.currencies}>{cur}</span>
           </p>
           <p>
-            Languages: <span className="languages">germany, dutch, french</span>
+            Languages:
+            <span className={styles.languages}>germany, dutch, french</span>
           </p>
         </div>
-        {/* <div className="borders">
-                    <a href="#" className="border">belgia</a>
-                    <a href="#" className="border">borneo</a>
-                    <a href="#" className="border">bibubabu</a>
-                </div> */}
+        <div className={styles.borders}>
+          <Link to="/" className={styles.border}>
+            belgia
+          </Link>
+          <Link to="/" className={styles.border}>
+            borneo
+          </Link>
+          <Link to="/" className={styles.border}>
+            bibubabu
+          </Link>
+        </div>
       </article>
     </section>
   </main>
