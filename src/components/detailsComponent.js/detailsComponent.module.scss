@@ -77,15 +77,8 @@ main.details {
       }
       .borders {
         margin-top: 40px;
+        display: flex;
         flex-basis: 100%;
-        .border {
-          border: 1px solid black;
-          text-decoration: none;
-          color: var(--textColor);
-          padding: 5px 10px;
-          margin-right: 15px;
-          cursor: pointer;
-        }
       }
     }
   }
