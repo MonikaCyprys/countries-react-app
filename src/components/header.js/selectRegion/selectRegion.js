@@ -32,26 +32,36 @@ class SelectRegion extends React.Component {
             Filter by Region
           </li>
           <RegionListItem
+            onsubmit={this.props.onsubmit}
+            region={this.props.region}
             state={this.state.toggle}
             checkRegion={this.checkRegion}
-            value="Africa"
+            value="africa"
           />
           <RegionListItem
+            onsubmit={this.props.onsubmit}
+            region={this.props.region}
             state={this.state.toggle}
             checkRegion={this.checkRegion}
-            value="America"
+            value="americas"
           />
           <RegionListItem
+            onsubmit={this.props.onsubmit}
+            region={this.props.region}
             state={this.state.toggle}
             checkRegion={this.checkRegion}
             value="Asia"
           />
           <RegionListItem
+            onsubmit={this.props.onsubmit}
+            region={this.props.region}
             state={this.state.toggle}
             checkRegion={this.checkRegion}
             value="Europe"
           />
           <RegionListItem
+            onsubmit={this.props.onsubmit}
+            region={this.props.region}
             state={this.state.toggle}
             checkRegion={this.checkRegion}
             value="Oceania"
