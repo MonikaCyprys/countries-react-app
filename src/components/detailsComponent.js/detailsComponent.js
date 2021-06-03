@@ -19,7 +19,6 @@ const DetailsComponent = ({
   borders,
 }) => {
   let symbol = currencies ? currencies[0].symbol : null;
-
   return (
     <main className={styles.details}>
       <Link to="/">
@@ -58,8 +57,7 @@ const DetailsComponent = ({
               Currencies: <span className={styles.currencies}>{symbol}</span>
             </p>
             <p>
-              Languages:
-              <span className={styles.languages}>germany, dutch, french</span>
+              Languages: <span className={styles.languages}></span>
             </p>
           </div>
           <div className={styles.borders}>

@@ -50,21 +50,21 @@ class SelectRegion extends React.Component {
             region={this.props.region}
             state={this.state.toggle}
             checkRegion={this.checkRegion}
-            value="Asia"
+            value="asia"
           />
           <RegionListItem
             onsubmit={this.props.onsubmit}
             region={this.props.region}
             state={this.state.toggle}
             checkRegion={this.checkRegion}
-            value="Europe"
+            value="europe"
           />
           <RegionListItem
             onsubmit={this.props.onsubmit}
             region={this.props.region}
             state={this.state.toggle}
             checkRegion={this.checkRegion}
-            value="Oceania"
+            value="oceania"
           />
         </ul>
       </div>

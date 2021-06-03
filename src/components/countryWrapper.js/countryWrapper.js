@@ -9,10 +9,13 @@ class CountryWrapper extends React.Component {
     super(props);
     this.changeRegion = this.changeRegion.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
+    this.searchCountries = this.searchCountries.bind(this);
 
     this.state = {
       flags: [],
       region: "all",
+      newCountries: [],
+      inputValue: null,
     };
   }
 
@@ -23,7 +26,7 @@ class CountryWrapper extends React.Component {
     fetch(all)
       .then((r) => r.json())
       .then((r) =>
-        this.setState((state) => ({
+        this.setState(() => ({
           flags: [...r], //? [...state.flags, ...r]
         }))
       );
@@ -38,16 +41,33 @@ class CountryWrapper extends React.Component {
       region: region,
     }));
   }
+  searchCountries(e) {
+    const allFlags = [...this.state.flags];
+    const inputValue = e.target.value;
+    let newCountries = allFlags.filter((country) => {
+      return country.name.toLowerCase().includes(inputValue) ? country : null;
+    });
+    this.setState(() => ({
+      newCountries: [...newCountries],
+      inputValue: inputValue,
+    }));
+  }
   render() {
-    console.log(this.state.region);
-    console.log(document.querySelector(".country"));
-    const { flags, region } = this.state;
+    const { flags, region, newCountries } = this.state;
+    const countries =
+      newCountries.length === 0 || this.state.inputValue.length === 0
+        ? flags
+        : newCountries;
     return (
       <>
-        <Header region={region} onsubmit={this.changeRegion} />
+        <Header
+          handleCountries={this.searchCountries}
+          region={region}
+          onsubmit={this.changeRegion}
+        />
         <main>
-          {flags.map((item) => (
-            <CountryCard key={item.nativeName} {...item} />
+          {countries.map((item) => (
+            <CountryCard key={item.name} {...item} />
           ))}
         </main>
       </>

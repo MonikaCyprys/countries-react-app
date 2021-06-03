@@ -10,37 +10,4 @@
   font-size: 1rem;
   margin: 30px 0;
   align-items: flex-start;
-
-  .CountryChoice {
-    padding: 10px;
-    border-radius: 8px;
-    flex-basis: 100%;
-    background-color: var(--elementsColor);
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    @include tablet-view {
-      flex-basis: 350px;
-    }
-    svg {
-      margin: 0 15px;
-      font-size: 1.3em;
-      opacity: 0.3;
-      color: var(--textColor);
-      pointer-events: none;
-      transition: 0.8s ease all;
-      transform-origin: 50% 25%;
-    }
-    .Country {
-      border: none;
-      color: var(--textColor);
-      background-color: transparent;
-      font-size: 1em;
-      font-weight: 600;
-      font-family: inherit;
-      padding: 10px 0;
-      width: 100%;
-    }
-  }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./regionListItem.module.scss";
-function RegionListItem({ value, checkRegion, state, onsubmit, region }) {
+function RegionListItem({ value,  state, onsubmit, region }) {
   return (
     <li
       onClick={(e) => onsubmit((region = `region/${e.target.textContent}`))}
