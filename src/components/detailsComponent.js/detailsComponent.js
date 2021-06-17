@@ -2,9 +2,8 @@ import React from "react";
 import Border from "./Border/Border";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 import styles from "./detailsComponent.module.scss";
-
+import { Link } from "react-router-dom";
 const arrowBack = <FontAwesomeIcon icon={faLongArrowAltLeft} />;
 const DetailsComponent = ({
   name,
@@ -14,11 +13,16 @@ const DetailsComponent = ({
   region,
   subregion,
   capital,
-  domain,
   currencies,
   borders,
+  languages,
+  topLevelDomain,
+  allFlags,
+  changeCountryID,
+  countryName,
 }) => {
   let symbol = currencies ? currencies[0].symbol : null;
+  let language = languages ? languages[0].name : null;
   return (
     <main className={styles.details}>
       <Link to="/">
@@ -51,17 +55,23 @@ const DetailsComponent = ({
           </div>
           <div className="secondInfo">
             <p>
-              Top level domain: <span className={styles.domain}>{domain}</span>
+              Top level domain:
+              <span className={styles.domain}>{topLevelDomain}</span>
             </p>
             <p>
               Currencies: <span className={styles.currencies}>{symbol}</span>
             </p>
             <p>
-              Languages: <span className={styles.languages}></span>
+              Languages: <span className={styles.languages}>{language}</span>
             </p>
           </div>
           <div className={styles.borders}>
-            <Border bord={borders} />
+            <Border
+              changeCountryID={changeCountryID}
+              countryName={countryName}
+              allFlagsProps={allFlags}
+              bord={borders}
+            />
           </div>
         </article>
       </section>

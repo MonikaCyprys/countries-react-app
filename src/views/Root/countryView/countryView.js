@@ -3,22 +3,60 @@ import DetailsComponent from "../../../components/detailsComponent.js/detailsCom
 class CountryView extends React.Component {
   constructor(props) {
     super(props);
+    this.changeCountry = this.changeCountry.bind(this);
     this.state = {
       data: {},
+      allFlags: [],
+      countryName: "",
     };
   }
-  componentDidMount() {
-    var country = `https://restcountries.eu/rest/v2/name/${this.props.match.params.id}`;
-    fetch(country)
+  componentDidMount(countryID) {
+    var countryIDs = countryID ? countryID : this.props.match.params.id;
+    var countryName = `https://restcountries.eu/rest/v2/name/${countryIDs}`;
+    var all = `https://restcountries.eu/rest/v2/all`;
+    console.log(countryIDs);
+    fetch(countryName)
       .then((r) => r.json())
       .then((r) =>
         this.setState(() => ({
           data: r[0],
         }))
       );
+    console.log(this);
+    fetch(all)
+      .then((r) => r.json())
+      .then((r) =>
+        this.setState(() => ({
+          allFlags: [...r],
+        }))
+      );
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.countryName !== this.state.countryName) {
+      this.componentDidMount(this.state.countryName);
+    }
+  }
+  changeCountry(countryName) {
+    let singleCountryName = countryName;
+    const index = countryName.indexOf(" (");
+    if (index !== -1) {
+      singleCountryName = countryName.slice(0, index);
+    }
+    if (this.state.data.name !== singleCountryName) {
+      this.setState(() => ({
+        countryName: singleCountryName,
+      }));
+    }
   }
   render() {
-    return <DetailsComponent {...this.state.data} />;
+    return (
+      <DetailsComponent
+        changeCountryID={this.changeCountry}
+        countryName={this.state.countryName}
+        allFlags={this.state.allFlags}
+        {...this.state.data}
+      />
+    );
   }
 }
 

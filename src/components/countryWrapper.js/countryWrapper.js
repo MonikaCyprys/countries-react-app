@@ -20,10 +20,9 @@ class CountryWrapper extends React.Component {
   }
 
   componentDidMount() {
-    var all = `https://restcountries.eu/rest/v2/${this.state.region}`;
-    console.log(all);
+    var regions = `https://restcountries.eu/rest/v2/${this.state.region}`;
 
-    fetch(all)
+    fetch(regions)
       .then((r) => r.json())
       .then((r) =>
         this.setState(() => ({
@@ -43,7 +42,7 @@ class CountryWrapper extends React.Component {
   }
   searchCountries(e) {
     const allFlags = [...this.state.flags];
-    const inputValue = e.target.value;
+    const inputValue = e.target.value.toLowerCase();
     let newCountries = allFlags.filter((country) => {
       return country.name.toLowerCase().includes(inputValue) ? country : null;
     });
