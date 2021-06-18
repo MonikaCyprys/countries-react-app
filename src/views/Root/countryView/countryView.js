@@ -13,21 +13,22 @@ class CountryView extends React.Component {
   componentDidMount(countryID) {
     var countryIDs = countryID ? countryID : this.props.match.params.id;
     var countryName = `https://restcountries.eu/rest/v2/name/${countryIDs}`;
-    var all = `https://restcountries.eu/rest/v2/all`;
-    console.log(countryIDs);
+    console.log(countryID);
+    if (countryID === undefined) {
+      var all = `https://restcountries.eu/rest/v2/all`;
+      fetch(all)
+        .then((r) => r.json())
+        .then((r) =>
+          this.setState(() => ({
+            allFlags: [...r],
+          }))
+        );
+    }
     fetch(countryName)
       .then((r) => r.json())
       .then((r) =>
         this.setState(() => ({
           data: r[0],
-        }))
-      );
-    console.log(this);
-    fetch(all)
-      .then((r) => r.json())
-      .then((r) =>
-        this.setState(() => ({
-          allFlags: [...r],
         }))
       );
   }
