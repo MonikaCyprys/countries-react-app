@@ -5,20 +5,19 @@
   height: fit-content;
   display: flex;
   padding: 20px 5%;
-  font-size: 1rem;
   justify-content: space-between;
   color: var(--textColor);
   box-shadow: 0 -4px 10px 0 var(--inputsColor);
   background-color: var(--elementsColor);
-  h1 {
-    font-size: 1.1em;
-  }
-  .SwitchModeButton {
+
+  button.SwitchModeButton {
     color: var(--textColor);
     border: none;
     background-color: transparent;
     cursor: pointer;
     font-weight: 600;
+    font-size: 1em;
+
     .SwitchBtnImage {
       margin-right: 10px;
     }

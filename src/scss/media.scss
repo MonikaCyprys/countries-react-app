@@ -1,10 +1,15 @@
 @mixin tablet-view {
-  @media (min-width: 630px) {
+  @media (min-width: 850px) {
     @content;
   }
 }
 @mixin desktop-view {
   @media (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin fontSize {
+  @media (min-width: 1800px) {
     @content;
   }
 }
