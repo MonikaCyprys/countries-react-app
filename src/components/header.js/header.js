@@ -12,6 +12,7 @@ const Header = ({ onsubmit, region, handleCountries }) => (
   <header className={styles.CustomSearching}>
     <SearchCountry handleCountries={handleCountries} />
     <SelectRegion region={region} onsubmit={onsubmit} arrow={arrowIcon} />
+    <button className={styles.clearRegions}>ClearRegions</button>
   </header>
 );
 
