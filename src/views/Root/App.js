@@ -3,7 +3,7 @@ import "./App.scss";
 import Navigation from "../../components/nav.js/nav";
 import CountryWrapper from "../../components/countryWrapper.js/countryWrapper";
 import CountryView from "./countryView/countryView";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,15 +13,15 @@ class App extends React.Component {
   }
   render() {
     return (
-      <BrowserRouter>
+      <Router basename={process.env.PUBLIC_URL}>
         <>
           <Navigation />
           <Switch>
             <Route exact path="/" component={CountryWrapper} />
-            <Route path="/country/:id"  component={CountryView} />
+            <Route path="/country/:id" component={CountryView} />
           </Switch>
         </>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
