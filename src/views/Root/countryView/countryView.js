@@ -13,7 +13,6 @@ class CountryView extends React.Component {
   componentDidMount(countryID) {
     var countryIDs = countryID ? countryID : this.props.match.params.id;
     var countryName = `https://restcountries.eu/rest/v2/name/${countryIDs}`;
-    console.log(countryID);
     if (countryID === undefined) {
       var all = `https://restcountries.eu/rest/v2/all`;
       fetch(all)
@@ -62,4 +61,3 @@ class CountryView extends React.Component {
 }
 
 export default CountryView;
-// name={this.state.data.name}

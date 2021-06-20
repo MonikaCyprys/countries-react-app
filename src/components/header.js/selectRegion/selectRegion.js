@@ -5,8 +5,11 @@ class SelectRegion extends React.Component {
   constructor(props) {
     super(props);
     this.handleMenuRegion = this.handleMenuRegion.bind(this);
+    this.chooseTheRegion = this.chooseTheRegion.bind(this);
+
     this.state = {
       toggle: false,
+      checkedRegion: "Filter by Region",
     };
   }
 
@@ -15,55 +18,52 @@ class SelectRegion extends React.Component {
       toggle: !this.state.toggle,
     }));
   }
-
-  checkRegion(e) {
-    const region = e.target;
-    const initValue = document.querySelector(".init")
-      ? document.querySelector(".init")
-      : document.querySelector(".region");
-    initValue.textContent = region.textContent;
+  chooseTheRegion(checkedRegion) {
+    this.setState(() => ({
+      checkedRegion: checkedRegion,
+    }));
   }
+
   render() {
+    const { checkedRegion } = this.state;
     return (
-      <div className={styles.select}>
-        <ul onClick={this.handleMenuRegion} className={styles.ContinentSelect}>
+      <div onClick={this.handleMenuRegion} className={styles.select}>
+        <ul className={styles.ContinentSelect}>
           {this.props.arrow}
-          <li onClick={this.checkRegion} className="init">
-            Filter by Region
-          </li>
+          <li className="init">{checkedRegion}</li>
           <RegionListItem
-            onsubmit={this.props.onsubmit}
+            changeRegion={this.props.changeRegion}
             region={this.props.region}
             state={this.state.toggle}
-            checkRegion={this.checkRegion}
+            chooseTheRegion={this.chooseTheRegion}
             value="africa"
           />
           <RegionListItem
-            onsubmit={this.props.onsubmit}
+            changeRegion={this.props.changeRegion}
             region={this.props.region}
             state={this.state.toggle}
-            checkRegion={this.checkRegion}
+            chooseTheRegion={this.chooseTheRegion}
             value="americas"
           />
           <RegionListItem
-            onsubmit={this.props.onsubmit}
+            changeRegion={this.props.changeRegion}
             region={this.props.region}
             state={this.state.toggle}
-            checkRegion={this.checkRegion}
+            chooseTheRegion={this.chooseTheRegion}
             value="asia"
           />
           <RegionListItem
-            onsubmit={this.props.onsubmit}
+            changeRegion={this.props.changeRegion}
             region={this.props.region}
             state={this.state.toggle}
-            checkRegion={this.checkRegion}
+            chooseTheRegion={this.chooseTheRegion}
             value="europe"
           />
           <RegionListItem
-            onsubmit={this.props.onsubmit}
+            changeRegion={this.props.changeRegion}
             region={this.props.region}
             state={this.state.toggle}
-            checkRegion={this.checkRegion}
+            chooseTheRegion={this.chooseTheRegion}
             value="oceania"
           />
         </ul>

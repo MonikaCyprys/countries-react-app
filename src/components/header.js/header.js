@@ -8,13 +8,13 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const arrowIcon = <FontAwesomeIcon icon={faChevronDown} />;
 
-const Header = ({ onsubmit, region, handleCountries }) => {
+const Header = ({ changeRegion, region, handleCountries }) => {
   return (
     <header className={styles.CustomSearching}>
       <SearchCountry handleCountries={handleCountries} />
-      <SelectRegion region={region} onsubmit={onsubmit} arrow={arrowIcon} />
+      <SelectRegion region={region} changeRegion={changeRegion} arrow={arrowIcon} />
       <button
-        onClick={(e) => onsubmit((region = "all"))}
+        onClick={(e) => changeRegion((region = "/all"))}
         className={styles.clearRegions}
       >
         Clear regions

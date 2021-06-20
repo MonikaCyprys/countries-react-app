@@ -8,25 +8,23 @@ class CountryWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.changeRegion = this.changeRegion.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);
     this.searchCountries = this.searchCountries.bind(this);
-
     this.state = {
       flags: [],
-      region: "all",
+      region: "/all",
       newCountries: [],
       inputValue: null,
     };
   }
 
   componentDidMount() {
-    var regions = `https://restcountries.eu/rest/v2/${this.state.region}`;
+    var regions = `https://restcountries.eu/rest/v2${this.state.region}`;
 
     fetch(regions)
       .then((r) => r.json())
       .then((r) =>
         this.setState(() => ({
-          flags: [...r], //? [...state.flags, ...r]
+          flags: [...r],
         }))
       );
   }
@@ -36,8 +34,9 @@ class CountryWrapper extends React.Component {
     }
   }
   changeRegion(region) {
+    const checkWchichRegion = region === "/all" ? region : `/region/${region}`;
     this.setState(() => ({
-      region: region,
+      region: checkWchichRegion,
     }));
   }
   searchCountries(e) {
@@ -62,7 +61,7 @@ class CountryWrapper extends React.Component {
         <Header
           handleCountries={this.searchCountries}
           region={region}
-          onsubmit={this.changeRegion}
+          changeRegion={this.changeRegion}
         />
         <main>
           {countries.map((item) => (
