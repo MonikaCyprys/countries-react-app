@@ -1,4 +1,4 @@
-# countries-react-app
+# Countries-react-app
 
 # Frontend Mentor - REST Countries API with color theme switcher solution
 
@@ -9,7 +9,6 @@ This is a solution to the REST Countries API challenge on Frontend Mentor. Front
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -31,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-### Links
+![desktop preview](src/assets/images/desktop-preview.jpg)
 
 ## My process
 
@@ -43,7 +42,7 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - CSS modules - For styles
-- API 
+- REST API 
 
 ### What I learned
 
@@ -56,9 +55,8 @@ Users should be able to:
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - 
+- [deploy React App when using React Router](https://medium.com/@arijit_chowdhury/deploy-react-app-with-react-router-to-github-pages-for-free-569377f483f) - this page helped me why my page after deploy loaded only navigation component, which was out of react router.
 
 ## Author
 
-- Website - 
-- Frontend Mentor - 
+- Frontend Mentor - [@Monika Cyprys](https://www.frontendmentor.io/profile/MonikaCyprys)
