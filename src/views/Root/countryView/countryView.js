@@ -4,6 +4,8 @@ class CountryView extends React.Component {
   constructor(props) {
     super(props);
     this.changeCountry = this.changeCountry.bind(this);
+    // this.destroySpaces = this.destroySpaces.bind(this);
+
     this.state = {
       data: {},
       allFlags: [],
@@ -12,6 +14,7 @@ class CountryView extends React.Component {
   }
   componentDidMount(countryID) {
     var countryIDs = countryID ? countryID : this.props.match.params.id;
+    // const destroyedSpaces = this.destroySpaces(countryIDs);
     var countryName = `https://restcountries.eu/rest/v2/name/${countryIDs}`;
     if (countryID === undefined) {
       var all = `https://restcountries.eu/rest/v2/all`;
@@ -36,9 +39,10 @@ class CountryView extends React.Component {
       this.componentDidMount(this.state.countryName);
     }
   }
+
   changeCountry(countryName) {
     let singleCountryName = countryName;
-    const index = countryName.indexOf(" (");
+    const index = countryName.indexOf("(");
     if (index !== -1) {
       singleCountryName = countryName.slice(0, index);
     }

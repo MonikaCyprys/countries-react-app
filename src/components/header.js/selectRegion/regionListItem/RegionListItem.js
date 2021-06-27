@@ -15,7 +15,6 @@ function RegionListItem({
         changeRegion((region = checkedRegion));
       }}
       className={state ? styles.isActive : styles.region}
-      value={value}
     >
       {value}
     </li>

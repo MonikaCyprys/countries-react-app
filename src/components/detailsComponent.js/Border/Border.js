@@ -10,9 +10,14 @@ const Border = ({ allFlagsProps, bord, changeCountryID, countryName }) => {
       matchesBorders.push(allFlags[i].name);
     }
   }
-
+  function destroySpaces(border) {
+    const regex = /(\S)/gi;
+    border = border.match(regex);
+    const borderWithouSpaces = border.join("");
+    return borderWithouSpaces;
+  }
   return matchesBorders.map((border) => (
-    <Link to={`/country/${border}`}>
+    <Link to={`/country/${destroySpaces(border)}`}>
       <h3
         key={border.toString()}
         onClick={(e) => changeCountryID((countryName = e.target.textContent))}
