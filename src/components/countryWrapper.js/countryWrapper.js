@@ -28,6 +28,7 @@ class CountryWrapper extends React.Component {
         }))
       );
   }
+  
   componentDidUpdate(prevProps, prevState) {
     if (prevState.region !== this.state.region) {
       this.componentDidMount(this.state.region);
