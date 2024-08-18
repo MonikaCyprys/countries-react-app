@@ -12,6 +12,7 @@ class CountryView extends React.Component {
       countryName: "",
     };
   }
+  
   componentDidMount(countryID) {
     var countryIDs = countryID ? countryID : this.props.match.params.id;
     // const destroyedSpaces = this.destroySpaces(countryIDs);
