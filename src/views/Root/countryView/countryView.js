@@ -16,9 +16,9 @@ class CountryView extends React.Component {
   componentDidMount(countryID) {
     var countryIDs = countryID ? countryID : this.props.match.params.id;
     // const destroyedSpaces = this.destroySpaces(countryIDs);
-    var countryName = `https://restcountries.com/rest/v2/name/${countryIDs}`;
+    var countryName = `https://restcountries.com/v2/name/${countryIDs}`;
     if (countryID === undefined) {
-      var all = `https://restcountries.com/rest/v2/all`;
+      var all = `https://restcountries.com/v2/all`;
       fetch(all)
         .then((r) => r.json())
         .then((r) =>
