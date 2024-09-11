@@ -18,7 +18,7 @@ class CountryWrapper extends React.Component {
   }
 
   componentDidMount() {
-    var regions = `https://restcountries.com/rest/v2${this.state.region}`;
+    var regions = `https://restcountries.com/v2${this.state.region}`;
 
     fetch(regions)
       .then((r) => r.json())
